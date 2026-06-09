@@ -1,11 +1,10 @@
 package catering.businesslogic.event;
 
 import catering.businesslogic.menu.Menu;
+import catering.businesslogic.shift.Shift;
+import catering.businesslogic.user.User;
 
-/**
- * Interface for receiving event-related notifications.
- * Implemented by classes that need to respond to event changes.
- */
+
 public interface EventReceiver {
 
     void updateEventCreated(Event event);
@@ -23,4 +22,9 @@ public interface EventReceiver {
     void updateMenuAssigned(Service service, Menu menu);
 
     void updateMenuRemoved(Service service);
+
+    // Nuovi metodi per DSD Assegnamento Personale
+    void updateStaffAssigned(Service service, Shift shift, User staff);
+
+    void updateStaffRemoved(Service service, Shift shift, User staff);
 }

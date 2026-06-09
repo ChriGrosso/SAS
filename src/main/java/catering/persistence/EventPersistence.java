@@ -4,6 +4,8 @@ import catering.businesslogic.event.Event;
 import catering.businesslogic.event.EventReceiver;
 import catering.businesslogic.event.Service;
 import catering.businesslogic.menu.Menu;
+import catering.businesslogic.shift.Shift;
+import catering.businesslogic.user.User;
 
 /**
  * Persistence class for Event operations.
@@ -49,5 +51,13 @@ public class EventPersistence implements EventReceiver {
     @Override
     public void updateMenuRemoved(Service service) {
         service.removeMenuFromService();
+    }
+
+    @Override
+    public void updateStaffAssigned(Service service, Shift shift, User staff) {
+    }
+
+    @Override
+    public void updateStaffRemoved(Service service, Shift shift, User staff) {
     }
 }
